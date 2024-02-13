@@ -109,7 +109,7 @@ function App() {
     const { id } = selectedRecipe;
 
     try {
-      const response = await fetch('/api/recipes/${id}', {
+      const response = await fetch(`/api/recipes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
