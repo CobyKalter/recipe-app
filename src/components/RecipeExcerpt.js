@@ -1,4 +1,5 @@
 import React from "react";
+import { truncateText } from "../helpers/utils";
 
 const RecipeExcerpt = ({ recipe, handleSelectRecipe }) => {
     
@@ -8,7 +9,7 @@ const RecipeExcerpt = ({ recipe, handleSelectRecipe }) => {
                 <img src={recipe.image_url} alt={recipe.title} />
             </figure>
             <h2>{recipe.title}</h2>
-            <p className="flex-spacing">{recipe.description}</p>
+            <p className="flex-spacing">Description: {truncateText(recipe.description, 20)}</p>
             <button onClick={() => handleSelectRecipe(recipe)}>View</button>
         </article>
     );
